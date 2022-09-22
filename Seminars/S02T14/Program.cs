@@ -6,6 +6,7 @@
 
 Console.Clear();
 Console.WriteLine("14. Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23.");
+Console.Write($"Введите число: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 if (n % 7 == 0 && n % 23 == 0) Console.WriteLine($"Число {n} кратно числам 7 и 23.");
