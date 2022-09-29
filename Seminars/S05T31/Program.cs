@@ -15,7 +15,7 @@ int[] FillArray(int size, int min, int max)
 
 void ShowArray(int[] array)
 {
-    Console.WriteLine("[" + String.Join(",", array)+ "]"); // for (int i = 0; i < array.Length; i++) Console.Write(array[i] + " ");
+    Console.WriteLine("[" + String.Join(", ", array)+ "]"); // for (int i = 0; i < array.Length; i++) Console.Write(array[i] + " ");
     // Console.WriteLine();
 }
 
