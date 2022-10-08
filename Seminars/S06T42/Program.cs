@@ -13,8 +13,8 @@ string Binary(int num)
     string bin = string.Empty;
     while (num > 0)
     {
-       bin = num % 2 + bin;
-       num /= 2;
+        bin = ((num % 2 == 0) ? "0" : "1") + bin; // bin = num % 2 + bin;
+        num /= 2;
     }
     return bin;
 }
