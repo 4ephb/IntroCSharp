@@ -13,6 +13,11 @@
 Console.Clear();
 Console.WriteLine("Задайте двумерный массив из целых чисел. Определите, есть столбец в массиве, сумма которого, больше суммы элементов расположенных в четырех \"углах\" двумерного массива.");
 
+void ShowArray(int[] array)
+{
+    Console.Write("" + String.Join(" ", array) + "");
+}
+
 int[,] Fill2DArray(int row, int col, int min, int max)
 {
     int[,] array = new int[row, col];
@@ -33,27 +38,40 @@ void Show2DArray(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
             Console.Write(array[i, j] + " ");
 
-        Console.WriteLine();
+        if (i != array.GetLength(0)-1) Console.WriteLine();
+        else Console.Write("-> ");
     }
 }
 
-double[] ColAverage(int[,] array)
+int[] ColSum(int[,] array)
 {
-    double sum;
-    int[] result = new int[array.GetLength(0)];
+    int sum;
+    int[] result = new int[array.GetLength(1)];
     for (int j = 0; j < array.GetLength(1); j++)
     {
         sum = 0;
         for (int i = 0; i < array.GetLength(0); i++)
-        {
             sum += array[i, j];
-        }
-        result[j]= Math.Round(sum / array.GetLength(0), 2);
+        result[j] = sum;
     }
     return result;
 }
 
+int CornerSum(int[,] array)
+{
+    int result = array[0, 0] + array[0, array.GetLength(1) - 1] + array[array.GetLength(0) - 1, 0] + array[array.GetLength(0) - 1, array.GetLength(1) - 1];
+    return result;
+}
 
+bool CompareCorCol(int[] array, int max)
+{
+    bool result = false;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (max < array[i]) result = true;
+    }
+    return result;
+}
 
 // Ручной ввод
 // Console.Write("Введите количество рядов (m): ");
@@ -68,16 +86,17 @@ int n = 4;
 
 int[,] array = Fill2DArray(m, n, 1, 10);
 
-
-
-
 // Генеративный ввод
 // Random rnd = new Random();
 // int[,] array = Fill2DArray(rnd.Next(2, 6), rnd.Next(2, 6), 1, 10);
 
 Show2DArray(array);
-Console.Write(" -> ");
 
-Console.Write("Среднее арифметическое каждого столбца: ");
-int[] ColAverageArray = ColAverage(array);
-Show2DArray(ColAverageArray);
+int[] ColSumArray = ColSum(array); // Сумма каждого столбца
+// ShowArray(ColSumArray);
+
+int CorSum = CornerSum(array); // Сумма угловых элементов
+// Console.Write($"{CorSum}");
+
+if (CompareCorCol(ColSumArray, CorSum) == true) Console.WriteLine("да");
+else Console.WriteLine("нет");
