@@ -36,10 +36,9 @@ void Show2DArray(int[,] array)
 
 void RawElemSort(int[,] array)
 {
-
+    int temp;
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        int temp;
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(1) - 1; k++)
