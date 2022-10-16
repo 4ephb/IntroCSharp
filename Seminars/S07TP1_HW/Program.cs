@@ -10,13 +10,14 @@
 // 4 3 5 3
 // 2 1 6 2 -> да
 
+
 Console.Clear();
 Console.WriteLine("Задайте двумерный массив из целых чисел. Определите, есть столбец в массиве, сумма которого, больше суммы элементов расположенных в четырех \"углах\" двумерного массива.");
 
-void ShowArray(int[] array)
-{
-    Console.Write("" + String.Join(" ", array) + "");
-}
+// void ShowArray(int[] array)
+// {
+//     Console.Write("" + String.Join(" ", array) + "");
+// }
 
 int[,] Fill2DArray(int row, int col, int min, int max)
 {
