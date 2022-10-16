@@ -34,7 +34,7 @@ void Show2DArray(int[,] array)
     }
 }
 
-void RawElemSort(int[,] array)
+void RowElemSort(int[,] array)
 {
     int temp;
     for (int i = 0; i < array.GetLength(0); i++)
@@ -68,6 +68,6 @@ int[,] Array = Fill2DArray(m, n, 1, 9);
 Console.WriteLine("Исходный массив:");
 Show2DArray(Array);
 
-RawElemSort(Array);
+RowElemSort(Array);
 Console.WriteLine("\nИтоговый массив:");
 Show2DArray(Array);
