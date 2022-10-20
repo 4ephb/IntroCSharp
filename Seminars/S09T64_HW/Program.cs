@@ -15,18 +15,21 @@ Console.WriteLine("64. Задайте значения N и M. Напишите 
 
 // Пример
 int m = 4,
-    n = 8,
-    k = n;
+    n = 8;
 
-int ShowEvenNumbers(int n, int m)
+void ShowNumbersRec(int m, int n)
 {
-    if (n % 2 == 0) Console.Write(k - n + " ");
-    if (n != m) return ShowEvenNumbers(n - 1, m);
-    else return 0;
+    if (m % 2 == 0) Console.Write($"{m} ");
 
-    // if (n == m) ShowEvenNumbers(n, m - 1);
-    // Console.Write(m + " ");
+    if (m > n)
+    {
+        if (m != n) ShowNumbersRec(m - 1, n);
+    }
+    else
+    {
+        if (m != n) ShowNumbersRec(m + 1, n);
+    }
 }
 
 Console.Write($"M = {m}; N = {n} -> ");
-ShowEvenNumbers(n, m);
+ShowNumbersRec(m, n);
