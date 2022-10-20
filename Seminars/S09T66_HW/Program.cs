@@ -5,7 +5,23 @@
 // M = 4; N = 8 -> 30
 
 Console.Clear();
-Console.WriteLine("");
+Console.WriteLine("66. Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N с помощью рекурсии.");
 
+// Ручной ввод
+// Console.Write("Задайте значение M: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Задайте значение N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-Console.Write(" -> ");
+// Пример
+int m = 4,
+    n = 8;
+
+int ShowNumbersSumRec(int m, int n)
+{
+    if (m == n) return m;
+    else return m + ShowNumbersSumRec(m + 1, n);
+}
+
+int Sum = ShowNumbersSumRec(m, n);
+Console.Write($"M = {m}; N = {n} -> {Sum}");
