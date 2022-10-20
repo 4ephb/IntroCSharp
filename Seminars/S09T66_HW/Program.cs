@@ -20,7 +20,8 @@ int m = 4,
 int ShowNumbersSumRec(int m, int n)
 {
     if (m == n) return m;
-    else return m + ShowNumbersSumRec(m + 1, n);
+    else if (m < n) return m + ShowNumbersSumRec(m + 1, n);
+    else return m + ShowNumbersSumRec(m - 1, n);
 }
 
 int Sum = ShowNumbersSumRec(m, n);
