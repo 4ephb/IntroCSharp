@@ -8,7 +8,7 @@ Console.WriteLine("65. Задайте значения M и N. Напишите 
 
 // Ручной ввод
 // Console.Write("Задайте значение M: ");
-// int n = Convert.ToInt32(Console.ReadLine());
+// int m = Convert.ToInt32(Console.ReadLine());
 // Console.Write("Задайте значение N: ");
 // int n = Convert.ToInt32(Console.ReadLine());
 
